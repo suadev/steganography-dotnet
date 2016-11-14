@@ -1,0 +1,8 @@
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\bin\Debug\BİTİRME.exe
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\bin\Debug\BİTİRME.pdb
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\obj\Debug\BİTİRME.Form1.resources
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\obj\Debug\BİTİRME.Properties.Resources.resources
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\obj\Debug\BİTİRME.csproj.GenerateResource.Cache
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\obj\Debug\BİTİRME.exe
+C:\Users\SUADEV\Documents\Visual Studio 2008\Projects\BİTİRME\BİTİRME\obj\Debug\BİTİRME.pdb
