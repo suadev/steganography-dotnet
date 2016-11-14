@@ -1,9 +1,0 @@
-C:\Users\suat.kose\Desktop\bitirme-STEGANOGRAPHY\bin\Debug\Steganography.exe
-C:\Users\suat.kose\Desktop\bitirme-STEGANOGRAPHY\bin\Debug\Steganography.pdb
-C:\Users\suat.kose\Desktop\bitirme-STEGANOGRAPHY\obj\Debug\Steganography.MainForm.resources
-C:\Users\suat.kose\Desktop\bitirme-STEGANOGRAPHY\obj\Debug\Steganography.Properties.Resources.resources
-C:\Users\suat.kose\Desktop\bitirme-STEGANOGRAPHY\obj\Debug\Steganography.csproj.GenerateResource.Cache
-C:\Users\suat.kose\Desktop\bitirme-STEGANOGRAPHY\obj\Debug\Steganography.exe
-C:\Users\suat.kose\Desktop\bitirme-STEGANOGRAPHY\obj\Debug\Steganography.pdb
-C:\Source\STEGANOGRAPHY- refactoring\obj\Debug\Steganography.exe
-C:\Source\STEGANOGRAPHY- refactoring\obj\Debug\Steganography.pdb
