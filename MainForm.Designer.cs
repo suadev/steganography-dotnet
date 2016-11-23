@@ -752,11 +752,13 @@
             this.ClientSize = new System.Drawing.Size(1084, 537);
             this.Controls.Add(this.TabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "STEGANOGRAPHY v.1.0  Suat KÖSE";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.TabControl.ResumeLayout(false);
             this.ImportTabPage.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
