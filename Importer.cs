@@ -19,23 +19,24 @@ namespace Steganography
 
         /// <summary>
         /// Checks selected file before starting the process
+        /// import를 시작하기 전에 선택된 파일 검사
         /// </summary>
         /// <returns></returns>
         private bool CheckBeforeImport()
         {
-            if (_form.ImageHeight == 0)
+            if (_form.ImageHeight == 0) // 이미지 높이가 0인지 검사
             {
                 
                 MessageBox.Show("Open an image file!", CommonConstants.WarningCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (((_form.ImageWidth * (_form.ImageHeight - 1) * 3) / 7) < _form.ImportTextBoxText.Length)
+            if (((_form.ImageWidth * (_form.ImageHeight - 1) * 3) / 7) < _form.ImportTextBoxText.Length) // (가로 * (세로-1)*3)/7 < ImportTextBoxText 검사 50/50일때 335<길이
             {
                 MessageBox.Show("Too much text for the selected image!", CommonConstants.WarningCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            return true;
+            return true; 
         }
 
         /// <summary>
@@ -85,16 +86,18 @@ namespace Steganography
 
         /// <summary>
         /// Imports the text into the selected image file by starting from top left corner.
+        /// 선택된 이미지파일에 왼쪽위 코너부터 시작해서 text를 import합니다.
         /// </summary>
         public void Import()
         {
+            //ProgressBar용
             _form.Sw = new Stopwatch();
             _form.Sw.Start();
             _form.ImportProgressBarValue = 0;
-
-            if (CheckBeforeImport())
+            
+            if (CheckBeforeImport()) // 50/50일때 335보다 텍스트길이가 짧으면 시작
             {
-                string bitsToImport = string.Empty;
+                string bitsToImport = string.Empty; 
                 var charsToImport = _form.ImportTextBoxText.ToCharArray();
                 var totalBytes = charsToImport.Length * 7;
                 var totalPixels = totalBytes / 3; // Total number of pixels to be used.
@@ -104,19 +107,21 @@ namespace Steganography
                 _form.ImportProgressBarMaximum = totalPixels + totalBytes;
 
                 foreach (var chr in charsToImport)// bitsToImport holds the bit form of the character that will be imported.
-                {
-                    var charToBits = Convert.ToString(chr, 2);
-                    if (charToBits.Length > 7)
+                { // ImportTextBoxText를 char을 iterator로 하나씩 돌음
+                    var charToBits = Convert.ToString(chr, 2); // 2바이트를 가져오나
+                    if (charToBits.Length > 7) // 가져온 char를 bit로 했을때 길이가 7이상이면
                     {
-                        bitsToImport += _helper.TurkishCharTo7Bit(chr);
+                        bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
                     }
                     else
                     {
                         bitsToImport += charToBits.PadLeft(7, '0'); // All characters must be defined by seven bits.
-                    }
+                    } // 7보다 짧으면 0으로 패딩 7비트 맞추어야함
                 }
 
+
                 var imageBits = _helper.GetOnlyNecessaryBytesFromImage(totalPixels, totalBytesMod3, _form.ImpProgressBar);
+                // imageBits는 
                 int sevenBitPointer = 0, oneBitPointer = 0;
                 var imageBitsLast = string.Empty;
 
