@@ -1,0 +1,8 @@
+C:\Users\김현식\steganography-dotnet\bin\Debug\Steganography.exe
+C:\Users\김현식\steganography-dotnet\bin\Debug\Steganography.pdb
+C:\Users\김현식\steganography-dotnet\obj\Debug\Steganography.csprojResolveAssemblyReference.cache
+C:\Users\김현식\steganography-dotnet\obj\Debug\Steganography.MainForm.resources
+C:\Users\김현식\steganography-dotnet\obj\Debug\Steganography.Properties.Resources.resources
+C:\Users\김현식\steganography-dotnet\obj\Debug\Steganography.csproj.GenerateResource.Cache
+C:\Users\김현식\steganography-dotnet\obj\Debug\Steganography.exe
+C:\Users\김현식\steganography-dotnet\obj\Debug\Steganography.pdb

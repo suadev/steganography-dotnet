@@ -200,6 +200,27 @@ namespace Steganography
                 MessageBox.Show("Open an image file before!", CommonConstants.WarningCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExportPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void SaveButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
