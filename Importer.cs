@@ -113,7 +113,7 @@ namespace Steganography
                     {
                         bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
                     }
-                    else
+                    elseㅁㅁㅁ
                     {
                         bitsToImport += charToBits.PadLeft(7, '0'); // All characters must be defined by seven bits.
                     } // 7보다 짧으면 0으로 패딩 7비트 맞추어야함
@@ -121,10 +121,11 @@ namespace Steganography
 
 
                 var imageBits = _helper.GetOnlyNecessaryBytesFromImage(totalPixels, totalBytesMod3, _form.ImpProgressBar);
-                // imageBits는 
+                // imageBits는 이미지의 왼쪽아래(0,높이)에서 RGB값을 비트나열로 가져온 값.
                 int sevenBitPointer = 0, oneBitPointer = 0;
                 var imageBitsLast = string.Empty;
 
+                //입력한 문자열(7bit)을 bit로 만들어서 8비트씩 나열함
                 while (bitsToImport.Length > oneBitPointer) //bitsToImport is importing into imagebits. the result is stored in imageBitLast.
                 {
                     imageBitsLast += imageBits.Substring(sevenBitPointer, 7) + int.Parse(bitsToImport.Substring(oneBitPointer, 1));
