@@ -115,11 +115,14 @@ namespace Steganography
                     {
                         bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
                     }
+<<<<<<< HEAD
+=======
                     else if (charToBits.Length > 10) // 한글글자셋에서 7비트로 맞춤
                     {
                         bitsToImport += _helper.KoreanCharTo7Bit(chr);
                         Korean_id = 1;
                     }
+>>>>>>> a00cec27ef053b4716b9aceffc0925d0612b9a50
                     else
                     {
                         bitsToImport += charToBits.PadLeft(7, '0'); // All characters must be defined by seven bits.
@@ -140,7 +143,7 @@ namespace Steganography
                     sevenBitPointer += 8;
                     _form.ImpProgressBar.Increment(1);
                 }
-
+                // Import할 Text 길이 가져오기
                 ImportTextLength();
                 imageBitsLast += imageBits.Substring(sevenBitPointer);
                 _form.ImportPictureBoxImage = _form.Bmp = _helper.ByteArrayToBitmap(_helper.StringToByteArray(imageBitsLast));
