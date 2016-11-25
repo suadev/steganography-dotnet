@@ -21,15 +21,15 @@ namespace Steganography
         /// Checks selected file before starting the process.
         /// </summary>
         /// <returns></returns>
-        private int CheckBeforeExport()
+        private int CheckBeforeExport() //Export 전에 선택된 파일 체크
         {
             try
             {
-                return ExportTextLength();
+                return ExportTextLength(); //ExportTextLenth 반환
             }
             catch
             {
-                return 0;
+                return 0; // 예외 발생시 0반환
             }
         }
 
@@ -56,22 +56,26 @@ namespace Steganography
             var bitmap = new Bitmap(_form.ExportPictureBoxImage);
             string thirtyBytes = string.Empty, textLength = string.Empty;
 
-            for (int i = 0; i < 10; i++)  // gettint last 30 bytes of the image
+            for (int i = 0; i < 10; i++)  // gettint last 30 bytes of the image 
+                           
             {
                 thirtyBytes += Convert.ToString(bitmap.GetPixel(i, _form.ImageHeight - 1).ToArgb(), 2).Substring(8);
+                //이미지의 마지막 줄 바로 위의 줄 30바이트 얻음 
             }
 
             int pointer = 7;
             for (int i = 0; i < 30; i++)   // getting the last bit of the each bytes
+                
             {
                 textLength += thirtyBytes.Substring(pointer, 1);
+                //각 바이트의 7번째 자리 값(즉 LSB비트)를 뽑아서 저장된 메시지의 길이 구함->2진수
                 pointer += 8;
             }
 
             var textLengthDecimalForm = new char[5];
             int m, tmp = 0, decrease = 0, k = 0;
 
-            for (m = 0; m < textLength.Length / 6; m++)
+            for (m = 0; m < textLength.Length / 6; m++) //텍스트의 길이를 10진수로 바꿈
             {
                 for (int n = k; n < k + 6; n++)
                 {
@@ -115,14 +119,14 @@ namespace Steganography
 
                 for (int l = 0; l < totalBytes; l++) // Getting the last bit of each bytes and stores to 'bytesToExportast'
                 {
-                    bytesToExportLast += bytesToExport.Substring(pointer, 1);
+                    bytesToExportLast += bytesToExport.Substring(pointer, 1);              
                     pointer += 8;
-                }
+                } //각 바이트의 마지막 비트를 꺼내서 byteToExportLast에 저장함
 
                 int decrease = 0, k = 0, temp = 0;
                 string importedText = string.Empty;
 
-                for (int j = 0; j < bytesToExportLast.Length / 7; j++)  // 7 bits -> One Character
+                for (int j = 0; j < bytesToExportLast.Length / 7; j++)  // 7 bits -> One Character, 7 바이트를 하나의 문자열로 바꾸는 부분 
                 {
                     for (int i = k; i < k + 7; i++)
                     {
@@ -130,27 +134,29 @@ namespace Steganography
                         decrease++;
                     }
 
-                    if (temp < 13&&Importer.Korean_id==0)
+                    if (temp < 13&&Importer.Korean_id==0) //꺼낸 아스키값이 13보다 작고, 한국어가 아니면
                     {
-                        importedText += _helper.NumberToTurkishChar(temp);
+                        importedText += _helper.NumberToTurkishChar(temp); //터키어!
                     }
-                    else if(temp < 26 && Importer.Korean_id != 0)
+                    else if(temp < 26 && Importer.Korean_id != 0) //꺼낸 아스키값이 26보다 작고 한국어이면
                     {
-                        importedText += _helper.NumberToKoreanChar(temp);
+                        importedText += _helper.NumberToKoreanChar(temp); //한국어!
                     }
-                    else
+                    else //그 밖의 것은
+
                     {
                         importedText += Encoding.ASCII.GetString(BitConverter.GetBytes(temp)).TrimEnd((Char)0);
+                        //그 아스키 값에 해당하는 문자열 꺼냄
                     }
 
                     _form.ExpProgressBar.Increment(1);
                     k += 7; temp = decrease = 0;
                 }
 
-                _form.ExportTextBoxText = importedText;
+                _form.ExportTextBoxText = importedText; // 폼으로 문자열 바로 꺼냄
                 SetInfoLabels();
             }
-            else
+            else // 추출된 텍스트의 길이가 0이면 Stego 파일이 아니라고 판단
             {
                 MessageBox.Show("This is not a stego file!", CommonConstants.WarningCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
