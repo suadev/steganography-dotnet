@@ -113,7 +113,7 @@ namespace Steganography
                     {
                         bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
                     }
-                    elseㅁㅁㅁ
+                    else
                     {
                         bitsToImport += charToBits.PadLeft(7, '0'); // All characters must be defined by seven bits.
                     } // 7보다 짧으면 0으로 패딩 7비트 맞추어야함

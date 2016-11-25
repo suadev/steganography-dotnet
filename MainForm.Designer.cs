@@ -706,7 +706,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("굴림", 20F);
-            this.label8.Location = new System.Drawing.Point(256, 281);
+            this.label8.Location = new System.Drawing.Point(256, 263);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(226, 27);
             this.label8.TabIndex = 6;
@@ -752,7 +752,6 @@
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1084, 537);
             this.Controls.Add(this.TabControl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
