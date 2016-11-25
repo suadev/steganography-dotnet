@@ -8,9 +8,10 @@ namespace Steganography
 {
     public class Importer
     {
+        public static int Korean_id = 0;
         private MainForm _form;
         private Helper _helper;
-
+  
         public Importer(MainForm form)
         {
             _form = form;
@@ -109,9 +110,15 @@ namespace Steganography
                 foreach (var chr in charsToImport)// bitsToImport holds the bit form of the character that will be imported.
                 { // ImportTextBoxText를 char을 iterator로 하나씩 돌음
                     var charToBits = Convert.ToString(chr, 2); // 2바이트를 가져오나
-                    if (charToBits.Length > 7) // 가져온 char를 bit로 했을때 길이가 7이상이면
+                 
+                    if (charToBits.Length > 7&&charToBits.Length<14) // 가져온 char를 bit로 했을때 길이가 7이상이면
                     {
                         bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
+                    }
+                    else if (charToBits.Length > 10) // 한글글자셋에서 7비트로 맞춤
+                    {
+                        bitsToImport += _helper.KoreanCharTo7Bit(chr);
+                        Korean_id = 1;
                     }
                     else
                     {

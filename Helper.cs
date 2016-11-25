@@ -138,6 +138,121 @@ namespace Steganography
             return '?';
         }
 
+        public string KoreanCharTo7Bit(char KoreanChar)
+        {
+            if (KoreanChar == 'ㄱ')
+                return "0000000";
+            if (KoreanChar == 'ㄴ')
+                return "0000001";
+            if (KoreanChar == 'ㄷ')
+                return "0000010";
+            if (KoreanChar == 'ㄹ')
+                return "0000011";
+            if (KoreanChar == 'ㅁ')
+                return "0000100";
+            if (KoreanChar == 'ㅂ')
+                return "0000101";
+            if (KoreanChar == 'ㅅ')
+                return "0000110";
+            if (KoreanChar == 'ㅇ')
+                return "0000111";
+            if (KoreanChar == 'ㅈ')
+                return "0001000";
+            if (KoreanChar == 'ㅊ')
+                return "0001001";
+            if (KoreanChar == 'ㅋ')
+                return "0001010";
+            if (KoreanChar == 'ㅌ')
+                return "0001011";
+            if (KoreanChar == 'ㅍ')
+                return "0001100";
+            if (KoreanChar == 'ㅎ')
+                return "0001101";
+            if (KoreanChar == 'ㅏ')
+                return "0001110";
+            if (KoreanChar == 'ㅑ')
+                return "0001111";
+            if (KoreanChar == 'ㅓ')
+                return "0010000";
+            if (KoreanChar == 'ㅕ')
+                return "0010001";
+            if (KoreanChar == 'ㅗ')
+                return "0010010";
+            if (KoreanChar == 'ㅛ')
+                return "0010011";
+            if (KoreanChar == 'ㅜ')
+                return "0010100";
+            if (KoreanChar == 'ㅠ')
+                return "0010101";
+            if (KoreanChar == 'ㅡ')
+                return "0010110";
+            if (KoreanChar == 'ㅣ')
+                return "0010111";
+            if (KoreanChar == '\n')
+                return "0011000";
+
+            return "?";
+
+        }
+
+        public char NumberToKoreanChar(int number)
+        {
+
+            if (number == 0)
+                return 'ㄱ';
+            if (number == 1)
+                return 'ㄴ';
+            if (number == 2)
+                return 'ㄷ';
+            if (number == 3)
+                return 'ㄹ';
+            if (number == 4)
+                return 'ㅁ';
+            if (number == 5)
+                return 'ㅂ';
+            if (number == 6)
+                return 'ㅅ';
+            if (number == 7)
+                return 'ㅇ';
+            if (number == 8)
+                return 'ㅈ';
+            if (number == 9)
+                return 'ㅊ';
+            if (number == 10)
+                return 'ㅋ';
+            if (number == 11)
+                return 'ㅌ';
+            if (number == 12)
+                return 'ㅍ';
+            if (number == 13)
+                return 'ㅎ';
+            if (number == 14)
+                return 'ㅏ';
+            if (number == 15)
+                return 'ㅑ';
+            if (number == 16)
+                return 'ㅓ';
+            if (number == 17)
+                return 'ㅕ';
+            if (number == 18)
+                return 'ㅗ';
+            if (number == 19)
+                return 'ㅛ';
+            if (number == 20)
+                return 'ㅜ';
+            if (number == 21)
+                return 'ㅠ';
+            if (number == 22)
+                return 'ㅡ';
+            if (number == 23)
+                return 'ㅣ';
+            if (number == 24)
+                return '\n';
+
+            return '?';
+
+        }
+
         /// <summary>
         /// Gets the necessary bytes starting from top left corner of the image.
         /// </summary>

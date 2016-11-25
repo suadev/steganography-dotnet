@@ -130,9 +130,13 @@ namespace Steganography
                         decrease++;
                     }
 
-                    if (temp < 13)
+                    if (temp < 13&&Importer.Korean_id==0)
                     {
                         importedText += _helper.NumberToTurkishChar(temp);
+                    }
+                    else if(temp < 26 && Importer.Korean_id != 0)
+                    {
+                        importedText += _helper.NumberToKoreanChar(temp);
                     }
                     else
                     {
