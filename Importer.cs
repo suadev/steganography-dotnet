@@ -127,15 +127,16 @@ namespace Steganography
 
                     }
 
-                    /*   if (charToBits.Length > 7&&charToBits.Length<9) // 가져온 char를 bit로 했을때 길이가 7이상이면
-                       {
-                           bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
+                    if (charToBits.Length > 7 && charToBits.Length < 9) // 가져온 char를 bit로 했을때 길이가 7이상이면
+                    {
+                        bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
 
-                       }*/
+                    }
+                    else
+                    {
+                        bitsToImport += charToBits.PadLeft(14, '0');
 
-                    bitsToImport += charToBits.PadLeft(14, '0');
-
-
+                    }
                 }
 
 

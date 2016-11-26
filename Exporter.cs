@@ -137,6 +137,10 @@ namespace Steganography
                     {
                         importedText += Encoding.Unicode.GetString(BitConverter.GetBytes(temp + 43032)).TrimEnd((Char)0);
                     }
+                    else if (temp < 13)
+                    {
+                        importedText += _helper.NumberToTurkishChar(temp);
+                    }
                     else
                     {
                         importedText += Encoding.Unicode.GetString(BitConverter.GetBytes(temp)).TrimEnd((Char)0);
