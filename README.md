@@ -10,24 +10,24 @@
 ## 사용법(Usage)
 > 알림(Note): 만양 사진에 투명(transparent)한 픽셀이 포함 되어 있다면 삽입(embed)한 메시지가 드러날 수 있습니다. 이 프로그램은 모든 픽셀의 LSB에 숨기는 기법을 사용하기 때문입니다. 
 
-**삽입(Import)**
+### 삽입(Import)
 ===============
 
 <img src="https://ur0n2.com/githu/im2.png" alt="import">
 
-**추출(Export)**
+### 추출(Export)
 ===============
 
 <img src="https://ur0n2.com/githu/ex.png" alt="export">
 
 
 ## 사용 예(Example)
-**삽입기능(Import)**
+### 삽입기능(Import)
 ===============
 
 <img src="https://ur0n2.com/githu/imp.png" alt="import">
 
-**추출기능(Export)**
+### 추출기능(Export)
 ===============
 
 <img src="https://ur0n2.com/githu/exp.png" alt="import">
