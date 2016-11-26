@@ -117,7 +117,7 @@ namespace Steganography
 
                     if (chr >= Korea_First_Index)
                     {
-                        charToBits = Convert.ToString(chr - 43032, 2);
+                        charToBits = Convert.ToString(chr - Korea_First_Index+1000, 2); //1000을더하는 이유는 chr값이 0부터 시작하면 터키어와 겹치기때문.
 
                     }
 
