@@ -6,12 +6,13 @@ using System.Windows.Forms;
 
 namespace Steganography
 {
+
     public class Importer
     {
         public static int Korean_id = 0;
         private MainForm _form;
         private Helper _helper;
-  
+        public int Korea_First_Index = 44032;
         public Importer(MainForm form)
         {
             _form = form;
@@ -27,7 +28,7 @@ namespace Steganography
         {
             if (_form.ImageHeight == 0) // 이미지 높이가 0인지 검사
             {
-                
+
                 MessageBox.Show("Open an image file!", CommonConstants.WarningCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
@@ -37,7 +38,7 @@ namespace Steganography
                 MessageBox.Show("Too much text for the selected image!", CommonConstants.WarningCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            return true; 
+            return true;
         }
 
         /// <summary>
@@ -95,10 +96,10 @@ namespace Steganography
             _form.Sw = new Stopwatch();
             _form.Sw.Start();
             _form.ImportProgressBarValue = 0;
-            
+
             if (CheckBeforeImport()) // 50/50일때 335보다 텍스트길이가 짧으면 시작
             {
-                string bitsToImport = string.Empty; 
+                string bitsToImport = string.Empty;
                 var charsToImport = _form.ImportTextBoxText.ToCharArray();
                 var totalBytes = charsToImport.Length * 7;
                 var totalPixels = totalBytes / 3; // Total number of pixels to be used.
@@ -107,26 +108,34 @@ namespace Steganography
                     totalPixels++;
                 _form.ImportProgressBarMaximum = totalPixels + totalBytes;
 
+                var charToBits = "";//+++
+
                 foreach (var chr in charsToImport)// bitsToImport holds the bit form of the character that will be imported.
                 { // ImportTextBoxText를 char을 iterator로 하나씩 돌음
-                    var charToBits = Convert.ToString(chr, 2); // 2바이트를 가져오나
-                 
-                    if (charToBits.Length > 7&&charToBits.Length<14) // 가져온 char를 bit로 했을때 길이가 7이상이면
+
+
+
+                    if (chr >= Korea_First_Index)
                     {
-                        bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
+                        charToBits = Convert.ToString(chr - 43032, 2);
+
                     }
-<<<<<<< HEAD
-=======
-                    else if (charToBits.Length > 10) // 한글글자셋에서 7비트로 맞춤
-                    {
-                        bitsToImport += _helper.KoreanCharTo7Bit(chr);
-                        Korean_id = 1;
-                    }
->>>>>>> a00cec27ef053b4716b9aceffc0925d0612b9a50
+
                     else
                     {
-                        bitsToImport += charToBits.PadLeft(7, '0'); // All characters must be defined by seven bits.
-                    } // 7보다 짧으면 0으로 패딩 7비트 맞추어야함
+                        charToBits = Convert.ToString(chr, 2); // 2바이트를 가져오나
+
+                    }
+
+                    /*   if (charToBits.Length > 7&&charToBits.Length<9) // 가져온 char를 bit로 했을때 길이가 7이상이면
+                       {
+                           bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
+
+                       }*/
+
+                    bitsToImport += charToBits.PadLeft(14, '0');
+
+
                 }
 
 
@@ -136,13 +145,17 @@ namespace Steganography
                 var imageBitsLast = string.Empty;
 
                 //입력한 문자열(7bit)을 bit로 만들어서 8비트씩 나열함
+
+
+
                 while (bitsToImport.Length > oneBitPointer) //bitsToImport is importing into imagebits. the result is stored in imageBitLast.
                 {
-                    imageBitsLast += imageBits.Substring(sevenBitPointer, 7) + int.Parse(bitsToImport.Substring(oneBitPointer, 1));
-                    oneBitPointer++;
+                    imageBitsLast += imageBits.Substring(sevenBitPointer, 6) + (bitsToImport.Substring(oneBitPointer, 2));//int.parse remove
+                    oneBitPointer = oneBitPointer + 2;
                     sevenBitPointer += 8;
                     _form.ImpProgressBar.Increment(1);
                 }
+
                 // Import할 Text 길이 가져오기
                 ImportTextLength();
                 imageBitsLast += imageBits.Substring(sevenBitPointer);

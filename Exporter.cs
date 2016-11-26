@@ -56,16 +56,13 @@ namespace Steganography
             var bitmap = new Bitmap(_form.ExportPictureBoxImage);
             string thirtyBytes = string.Empty, textLength = string.Empty;
 
-            for (int i = 0; i < 10; i++)  // gettint last 30 bytes of the image 
-                           
+            for (int i = 0; i < 10; i++)  // gettint last 30 bytes of the image
             {
                 thirtyBytes += Convert.ToString(bitmap.GetPixel(i, _form.ImageHeight - 1).ToArgb(), 2).Substring(8);
-                //이미지의 마지막 줄 바로 위의 줄 30바이트 얻음 
-            }
+            }//이미지의 마지막 줄 바로 위의 줄 30바이트 얻음
 
             int pointer = 7;
             for (int i = 0; i < 30; i++)   // getting the last bit of the each bytes
-                
             {
                 textLength += thirtyBytes.Substring(pointer, 1);
                 //각 바이트의 7번째 자리 값(즉 LSB비트)를 뽑아서 저장된 메시지의 길이 구함->2진수
@@ -75,7 +72,7 @@ namespace Steganography
             var textLengthDecimalForm = new char[5];
             int m, tmp = 0, decrease = 0, k = 0;
 
-            for (m = 0; m < textLength.Length / 6; m++) //텍스트의 길이를 10진수로 바꿈
+            for (m = 0; m < textLength.Length / 6; m++)//텍스트의 길이를 10진수로 바꿈
             {
                 for (int n = k; n < k + 6; n++)
                 {
@@ -114,46 +111,46 @@ namespace Steganography
 
                 var bytesToExport = _helper.GetOnlyNecessaryBytesFromImage(totalPixels, totalBytesMod3, _form.ExpProgressBar);
 
-                int pointer = 7;
+                int pointer = 6;//++++
+
                 string bytesToExportLast = string.Empty;
+                string importedText = null;
+
 
                 for (int l = 0; l < totalBytes; l++) // Getting the last bit of each bytes and stores to 'bytesToExportast'
                 {
-                    bytesToExportLast += bytesToExport.Substring(pointer, 1);              
+                    bytesToExportLast += bytesToExport.Substring(pointer, 2);
                     pointer += 8;
-                } //각 바이트의 마지막 비트를 꺼내서 byteToExportLast에 저장함
-
+                }//각 바이트의 마지막 비트를 꺼내서 byteToExportLast에 저장함
                 int decrease = 0, k = 0, temp = 0;
-                string importedText = string.Empty;
+                importedText = string.Empty;
 
-                for (int j = 0; j < bytesToExportLast.Length / 7; j++)  // 7 bits -> One Character, 7 바이트를 하나의 문자열로 바꾸는 부분 
+                for (int j = 0; j < bytesToExportLast.Length / 14; j++)  // 14 bits -> One Character, 7 비트를 하나의 문자열로 바꾸는 부분
                 {
-                    for (int i = k; i < k + 7; i++)
+                    for (int i = k; i < k + 14; i++)
                     {
-                        temp += Convert.ToInt32(bytesToExportLast.Substring(i, 1)) * (int)Math.Pow(2, (6 - decrease));
+                        temp += Convert.ToInt32(bytesToExportLast.Substring(i, 1)) * (int)Math.Pow(2, (13 - decrease)); //13바꾼거임
                         decrease++;
                     }
 
-                    if (temp < 13&&Importer.Korean_id==0) //꺼낸 아스키값이 13보다 작고, 한국어가 아니면
+                    if (temp >= 1000)
                     {
-                        importedText += _helper.NumberToTurkishChar(temp); //터키어!
+                        importedText += Encoding.Unicode.GetString(BitConverter.GetBytes(temp + 43032)).TrimEnd((Char)0);
                     }
-                    else if(temp < 26 && Importer.Korean_id != 0) //꺼낸 아스키값이 26보다 작고 한국어이면
+                    else
                     {
-                        importedText += _helper.NumberToKoreanChar(temp); //한국어!
-                    }
-                    else //그 밖의 것은
-
-                    {
-                        importedText += Encoding.ASCII.GetString(BitConverter.GetBytes(temp)).TrimEnd((Char)0);
-                        //그 아스키 값에 해당하는 문자열 꺼냄
-                    }
+                        importedText += Encoding.Unicode.GetString(BitConverter.GetBytes(temp)).TrimEnd((Char)0);
+                    }//그 유니코드 값에 해당하는 문자열 꺼냄
 
                     _form.ExpProgressBar.Increment(1);
-                    k += 7; temp = decrease = 0;
+                    k += 14; temp = decrease = 0;
                 }
 
-                _form.ExportTextBoxText = importedText; // 폼으로 문자열 바로 꺼냄
+
+
+
+
+                _form.ExportTextBoxText = importedText;// 폼으로 문자열 바로 꺼냄
                 SetInfoLabels();
             }
             else // 추출된 텍스트의 길이가 0이면 Stego 파일이 아니라고 판단
