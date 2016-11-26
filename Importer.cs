@@ -102,7 +102,7 @@ namespace Steganography
                 string bitsToImport = string.Empty;
                 var charsToImport = _form.ImportTextBoxText.ToCharArray();
                 var totalBytes = charsToImport.Length * 7;
-                var totalPixels = totalBytes / 3; // Total number of pixels to be used.
+                var totalPixels = totalBytes / 3; // Total number of pixels to be used..
                 var totalBytesMod3 = totalBytes % 3;
                 if (totalBytesMod3 != 0)
                     totalPixels++;
