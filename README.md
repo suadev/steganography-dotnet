@@ -25,12 +25,12 @@
 
 ## Example
 ### Import
- ===============
+===============
 
  <img src="https://ur0n2.com/githu/imp.png" alt="import">
 
 ### Export
- ===============
+===============
 
  <img src="https://ur0n2.com/githu/exp.png" alt="import">
 
@@ -40,6 +40,7 @@
 >```bash
 >git clone https://github.com/rlagustlr677/steganography-dotnet.git
 >cd steganography-dotnet
+>```
 >After then, complie in personal IDE's enviroment and excute the Steganography.exe.
 >AND USE!!
 >(Recommand IDE: Visual Studio 2015 Community)
