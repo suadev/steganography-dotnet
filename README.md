@@ -1,40 +1,110 @@
-#½ºÅ×°¡³ë±×·¡ÇÇ-´å³İ(steganography-dotnet)
-<img src="https://ur0n2.com/githu/gdgtse.png" alt="È®ÀÎÇß½À´Ï´Ù" height="350" width="350">
+# Steganography-Dotnet
+<img src="https://ur0n2.com/githu/gdgtse.png" alt="í™•ì¸í–ˆìŠµë‹ˆë‹¤" height="350" width="350">
+
 =====================================
-## ÀÌ ÇÁ·Î±×·¥¿¡ ´ëÇÏ¿©(About this program)
-> ÀÌ ÇÁ·Î±×·¥Àº C#(.net)À¸·Î ¸¸µç ½ºÅ×°¡³ë ÇÁ·Î±×·¥ÀÔ´Ï´Ù. ´ç½ÅÀº ÀÌ ÇÁ·Î±×·¥À» »ç¿ëÇØ¼­ »çÁø¿¡¼­ ÇÈ¼¿ÀÇ LSB(Least Significat Bits)¿¡ ¸Ş½ÃÁö¸¦ ¼û±æ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ÇÁ·Î±×·¥Àº ¼û±æ ¸Ş½ÃÁö¿¡ À¯´ÏÄÚµå¸¦ Áö¿øÇÕ´Ï´Ù.
+
+## About this program
+> This program is a steganography program using C#(.net). Through this program, you can hide message in LSB of image file. This support UNICODE(English,Korean and Turkish, ect).
+
+>* Forked from [here][link]
+[link]: https://github.com/suadev/steganography-dotnet "ã„³ã…ã……ã…‡(Thanks)"
+
+## How to use
+> Note : If image contains transparent pixels, embed message can reveal. Because this program uses a way that hiding in LSB of pixels.
+
+### Import
+===============
+
+ <img src="https://ur0n2.com/githu/im2.png" alt="import">
+
+### Export
+===============
+
+ <img src="https://ur0n2.com/githu/ex.png" alt="export">
+
+
+## Example
+### Import
+ ===============
+
+ <img src="https://ur0n2.com/githu/imp.png" alt="import">
+
+### Export
+ ===============
+
+ <img src="https://ur0n2.com/githu/exp.png" alt="import">
+
+
+
+## Installation
+>```bash
+>git clone https://github.com/rlagustlr677/steganography-dotnet.git
+>cd steganography-dotnet
+>After then, complie in personal IDE's enviroment and excute the Steganography.exe.
+>AND USE!!
+>(Recommand IDE: Visual Studio 2015 Community)
+
+## License
+Not yet.
+
+## Original Author
+* suadev
+
+## Collaborator and contactable address
+* Junhwan Lee : ur0n2@ur0n2.com
+* Hyunsik Kim : rlagustlr677@naver.com
+* Seungyeon Kang : rillyppoppy@naver.com
+
+# ìŠ¤í…Œê°€ë…¸ê·¸ë˜í”¼ - ë‹·ë„· (steganography-dotnet)
+ <img src="https://ur0n2.com/githu/gdgtse.png" alt="í™•ì¸í–ˆìŠµë‹ˆë‹¤" height="350" width="350">
+=====================================
+## ì´ í”„ë¡œê·¸ë¨ì— ëŒ€í•˜ì—¬ (About this program)
+> ì´ í”„ë¡œê·¸ë¨ì€ C#(.net)ìœ¼ë¡œ ë§Œë“  ìŠ¤í…Œê°€ë…¸ í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤. ë‹¹ì‹ ì€ ì´ í”„ë¡œê·¸ë¨ì„ ì‚¬ìš©í•´ì„œ ì‚¬ì§„ì—ì„œ í”½ì…€ì˜ LSB(Least Significat Bits)ì— ë©”ì‹œì§€ë¥¼ ìˆ¨ê¸¸ ìˆ˜ ìˆìŠµë‹ˆë‹¤. ì´ í”„ë¡œê·¸ë¨ì€ ìˆ¨ê¸¸ ë©”ì‹œì§€ì— ìœ ë‹ˆì½”ë“œë¥¼ ì§€ì›í•©ë‹ˆë‹¤.
 >
 > * Forked from [here][link]
-[link]: https://github.com/suadev/steganography-dotnet "¤£¤¾¤µ¤·(Thanks)"
+[link]: https://github.com/suadev/steganography-dotnet "ã„³ã…ã……ã…‡(Thanks)"
 
-## »ç¿ë¹ı(Usage)
-> ¾Ë¸²(Note): ¸¸¾ç »çÁø¿¡ Åõ¸í(transparent)ÇÑ ÇÈ¼¿ÀÌ Æ÷ÇÔ µÇ¾î ÀÖ´Ù¸é »ğÀÔ(embed)ÇÑ ¸Ş½ÃÁö°¡ µå·¯³¯ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ÇÁ·Î±×·¥Àº ¸ğµç ÇÈ¼¿ÀÇ LSB¿¡ ¼û±â´Â ±â¹ıÀ» »ç¿ëÇÏ±â ¶§¹®ÀÔ´Ï´Ù. 
+## ì‚¬ìš©ë²•(How to use)
+> ì•Œë¦¼(Note): ì´ í”„ë¡œê·¸ë¨ì€ ëª¨ë“  í”½ì…€ì˜ LSBì— ìˆ¨ê¸°ëŠ” ê¸°ë²•ì„ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì—, ë§Œì•½ ì‚¬ì§„ì— íˆ¬ëª…(transparent)í•œ í”½ì…€ì´ í¬í•¨ ë˜ì–´ ìˆë‹¤ë©´ ì‚½ì…(embed)í•œ ë©”ì‹œì§€ê°€ ë“œëŸ¬ë‚  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 
-### »ğÀÔ(Import)
+### ì‚½ì…(Import)
+===============
+
 <img src="https://ur0n2.com/githu/im2.png" alt="import">
 
-### ÃßÃâ(Export)
+### ì¶”ì¶œ(Export)
+===============
+
 <img src="https://ur0n2.com/githu/ex.png" alt="export">
 
 
-## »ç¿ë ¿¹(Example)
-### »ğÀÔ±â´É(Import)
+## ì‚¬ìš© ì˜ˆ(Example)
+### ì‚½ì…ê¸°ëŠ¥(Import)
+===============
+
 <img src="https://ur0n2.com/githu/imp.png" alt="import">
 
-### ÃßÃâ±â´É(Export)
+### ì¶”ì¶œê¸°ëŠ¥(Export)
+===============
+
 <img src="https://ur0n2.com/githu/exp.png" alt="import">
 
-## ¼³Ä¡(Installation)
+
+
+## ì„¤ì¹˜(Installation)
 >```bash
 >git clone https://github.com/rlagustlr677/steganography-dotnet.git
 >cd steganography-dotnet
 >```
->ÀÌÈÄ °¢ÀÚÀÇ IDEÈ¯°æ¿¡¼­ ÄÄÆÄÀÏ ÇÑ ÈÄ¿¡ Steganography.exeÀ» ½ÇÇàÇØ¼­ »ç¿ëÇÕ´Ï´Ù. (±ÇÀåIDE: Visual Studio 2015 Community)
+>ì´í›„ ê°ìì˜ IDEí™˜ê²½ì—ì„œ ì»´íŒŒì¼ í•œ í›„ì— Steganography.exeì„ ì‹¤í–‰í•´ì„œ ì‚¬ìš©í•©ë‹ˆë‹¤. (ê¶Œì¥IDE: Visual Studio 2015 Community)
 
-## ¶óÀÌ¼¾½º(License)
-¾ÆÁ÷ Àû¿ëÇÏÁö ¾Ê¾Ò½À´Ï´Ù. (Not yet.)
+## ë¼ì´ì„¼ìŠ¤(License)
+ì•„ì§ ì ìš©í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. (Not yet.)
 
-## Çù¾÷ÀÚ(Collaborator) ¹× ¹®ÀÇ(Contact)
-* ÀÌÁØÈ¯(LeeJunHwan): ur0n2@ur0n2.com
-* ±èÇö½Ä(KimHyeonSik): rlagustlr677@naver.com
-* °­½Â¿¬(KangSeoungYeon): rillyppoppy@naver.com
+## ì›ì‘ì
+* suadev
+
+## í˜‘ì—…ì(Collaborator) ë° ë¬¸ì˜(Contact)
+* ì´ì¤€í™˜(JunHwan Lee): ur0n2@ur0n2.com
+* ê¹€í˜„ì‹(HyunSik Kim): rlagustlr677@naver.com
+* ê°•ìŠ¹ì—°(SeungYeon Kang): rillyppoppy@naver.com
