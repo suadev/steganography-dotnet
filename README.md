@@ -46,7 +46,7 @@
 >(Recommand IDE: Visual Studio 2015 Community)
 
 ## License
-Not yet.
+ㅎㅇㅎㅅㄴㄷ License 2016 JunHwan Lee, Hyunsik Kim, Seungyeon Kang 
 
 ## Original Author
 * suadev
@@ -100,7 +100,7 @@ Not yet.
 >이후 각자의 IDE환경에서 컴파일 한 후에 Steganography.exe을 실행해서 사용합니다. (권장IDE: Visual Studio 2015 Community)
 
 ## 라이센스(License)
-아직 적용하지 않았습니다. (Not yet.)
+ㅎㅇㅎㅅㄴㄷ 라이센스 2016 ur0n2, 김현식, 강승연
 
 ## 원작자
 * suadev
