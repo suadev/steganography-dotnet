@@ -1,50 +1,58 @@
-#½ºÅ×°¡³ë±×·¡ÇÇ-´å³Ý(steganography-dotnet)
-<img src="https://ur0n2.com/githu/gdgtse.png" alt="È®ÀÎÇß½À´Ï´Ù" height="350" width="350">
+#Steganography-Dotnet
+<img src="https://ur0n2.com/githu/gdgtse.png" alt="í™•ì¸í–ˆìŠµë‹ˆë‹¤" height="350" width="350">
+
 =====================================
-## ÀÌ ÇÁ·Î±×·¥¿¡ ´ëÇÏ¿©(About this program)
-> ÀÌ ÇÁ·Î±×·¥Àº C#(.net)À¸·Î ¸¸µç ½ºÅ×°¡³ë ÇÁ·Î±×·¥ÀÔ´Ï´Ù. ´ç½ÅÀº ÀÌ ÇÁ·Î±×·¥À» »ç¿ëÇØ¼­ »çÁø¿¡¼­ ÇÈ¼¿ÀÇ LSB(Least Significat Bits)¿¡ ¸Þ½ÃÁö¸¦ ¼û±æ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ÇÁ·Î±×·¥Àº ¼û±æ ¸Þ½ÃÁö¿¡ À¯´ÏÄÚµå¸¦ Áö¿øÇÕ´Ï´Ù.
+
+##About this program
+> This program is a steganography program using C#(.net). Through this program, you can hide message in LSB of image file. This support UNICODE(English,Korean and Turkish, ect).
+
+#ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½×·ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½(steganography-dotnet)
+<img src="https://ur0n2.com/githu/gdgtse.png" alt="È®ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½" height="350" width="350">
+=====================================
+## ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½(About this program)
+> ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ C#(.net)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½Ô´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¼ï¿½ï¿½ï¿½ LSB(Least Significat Bits)ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Úµå¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 >
 > * Forked from [here][link]
-[link]: https://github.com/suadev/steganography-dotnet "¤£¤¾¤µ¤·(Thanks)"
+[link]: https://github.com/suadev/steganography-dotnet "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Thanks)"
 
-## »ç¿ë¹ý(Usage)
-> ¾Ë¸²(Note): ¸¸¾ç »çÁø¿¡ Åõ¸í(transparent)ÇÑ ÇÈ¼¿ÀÌ Æ÷ÇÔ µÇ¾î ÀÖ´Ù¸é »ðÀÔ(embed)ÇÑ ¸Þ½ÃÁö°¡ µå·¯³¯ ¼ö ÀÖ½À´Ï´Ù. ÀÌ ÇÁ·Î±×·¥Àº ¸ðµç ÇÈ¼¿ÀÇ LSB¿¡ ¼û±â´Â ±â¹ýÀ» »ç¿ëÇÏ±â ¶§¹®ÀÔ´Ï´Ù. 
+## ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Usage)
+> ï¿½Ë¸ï¿½(Note): ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(transparent)ï¿½ï¿½ ï¿½È¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½(embed)ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å·¯ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È¼ï¿½ï¿½ï¿½ LSBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. 
 
-### »ðÀÔ(Import)
+### ï¿½ï¿½ï¿½ï¿½(Import)
 ===============
 
 <img src="https://ur0n2.com/githu/im2.png" alt="import">
 
-### ÃßÃâ(Export)
+### ï¿½ï¿½ï¿½ï¿½(Export)
 ===============
 
 <img src="https://ur0n2.com/githu/ex.png" alt="export">
 
 
-## »ç¿ë ¿¹(Example)
-### »ðÀÔ±â´É(Import)
+## ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(Example)
+### ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½(Import)
 ===============
 
 <img src="https://ur0n2.com/githu/imp.png" alt="import">
 
-### ÃßÃâ±â´É(Export)
+### ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Export)
 ===============
 
 <img src="https://ur0n2.com/githu/exp.png" alt="import">
 
 
 
-## ¼³Ä¡(Installation)
+## ï¿½ï¿½Ä¡(Installation)
 >```bash
 >git clone https://github.com/rlagustlr677/steganography-dotnet.git
 >cd steganography-dotnet
 >```
->ÀÌÈÄ °¢ÀÚÀÇ IDEÈ¯°æ¿¡¼­ ÄÄÆÄÀÏ ÇÑ ÈÄ¿¡ Steganography.exeÀ» ½ÇÇàÇØ¼­ »ç¿ëÇÕ´Ï´Ù. (±ÇÀåIDE: Visual Studio 2015 Community)
+>ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IDEÈ¯ï¿½æ¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ä¿ï¿½ Steganography.exeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. (ï¿½ï¿½ï¿½ï¿½IDE: Visual Studio 2015 Community)
 
-## ¶óÀÌ¼¾½º(License)
-¾ÆÁ÷ Àû¿ëÇÏÁö ¾Ê¾Ò½À´Ï´Ù. (Not yet.)
+## ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½(License)
+ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò½ï¿½ï¿½Ï´ï¿½. (Not yet.)
 
-## Çù¾÷ÀÚ(Collaborator) ¹× ¹®ÀÇ(Contact)
-* ÀÌÁØÈ¯(LeeJunHwan): ur0n2@ur0n2.com
-* ±èÇö½Ä(KimHyeonSik): rlagustlr677@naver.com
-* °­½Â¿¬(KangSeoungYeon): rillyppoppy@naver.com
+## ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Collaborator) ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Contact)
+* ï¿½ï¿½ï¿½ï¿½È¯(LeeJunHwan): ur0n2@ur0n2.com
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(KimHyeonSik): rlagustlr677@naver.com
+* ï¿½ï¿½ï¿½Â¿ï¿½(KangSeoungYeon): rillyppoppy@naver.com
