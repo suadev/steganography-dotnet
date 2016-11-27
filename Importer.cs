@@ -12,7 +12,7 @@ namespace Steganography
         public static int Korean_id = 0;
         private MainForm _form;
         private Helper _helper;
-        public int Korea_First_Index = 44032;
+        public int Korea_First_Index = 44032; //한국어를 입력하면 나오는 최소 유니코드 (Minimum UNICODE when you type Korean)
         public Importer(MainForm form)
         {
             _form = form;
@@ -26,7 +26,7 @@ namespace Steganography
         /// <returns></returns>
         private bool CheckBeforeImport()
         {
-            if (_form.ImageHeight == 0) // 이미지 높이가 0인지 검사
+            if (_form.ImageHeight == 0) // 이미지 높이가 0인지 검사(Check if image height is 0)
             {
 
                 MessageBox.Show("Open an image file!", CommonConstants.WarningCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -43,6 +43,7 @@ namespace Steganography
 
         /// <summary>
         /// Sets selected file info on the form.
+        /// 선택된 파일의 정보 설정 (파일의 정보를 변수에 넣어줌)
         /// </summary>
         public void SetImportedImageInfo()
         {
@@ -57,6 +58,7 @@ namespace Steganography
 
         /// <summary>
         /// Imports the text length using the bottom pixels line of the selected image file.
+        /// 선택된 이미지 파일의 마지막 줄의 픽셀을 이용해 텍스트의 길이를 가져온다.
         /// </summary>
         private void ImportTextLength()
         {
@@ -70,7 +72,7 @@ namespace Steganography
             for (var i = 0; i < 10; i++)
                 thirtyBytes += Convert.ToString(_form.Bmp.GetPixel(i, _form.ImageHeight - 1).ToArgb(), 2).Substring(8);
 
-            while (30 > counter) // (max. 99999 chars means max 30 bytes)
+            while (30 > counter) // (max. 99999 chars means max 30 bytes(최대 9999chars는 최대 30바이트 의미)) 
             {
                 newBottom = newBottom + thirtyBytes.Substring(y, 7) + int.Parse(textLengthBinary.Substring(counter, 1));
                 counter++;
@@ -115,26 +117,28 @@ namespace Steganography
 
 
 
-                    if (chr >= Korea_First_Index)
+                    if (chr >= Korea_First_Index) //chr이 한국어면 (if chr is Korean)
                     {
-                        charToBits = Convert.ToString(chr - Korea_First_Index+1000, 2); //1000을더하는 이유는 chr값이 0부터 시작하면 터키어와 겹치기때문.
+                        charToBits = Convert.ToString(chr - Korea_First_Index+1000, 2);
+                        //chr - Korean_First_Index는 16비트를 14비트로 줄이기 위해 (Chr - Korean_First_Index is to reduce 16 bits to 14 bits)
+                        //1000을더하는 이유는 chr값이 0부터 시작하면 터키어와 겹치기때문(The reason that add 1000 to text is to protect overlapping with turkish).
 
                     }
 
                     else
                     {
-                        charToBits = Convert.ToString(chr, 2); // 2바이트를 가져오나
+                        charToBits = Convert.ToString(chr, 2); // 한국어가 아니면 그냥 2진수로 바꿈 (if chr is not Korean, change to binary)
 
                     }
 
-                    if (charToBits.Length > 7 && charToBits.Length < 9) // 가져온 char를 bit로 했을때 길이가 7이상이면
+                    if (charToBits.Length > 7 && charToBits.Length < 9) // 바꾼 2진수가 7과 9 사이라면 (if it's binary is between 7 and 9)
                     {
-                        bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 7비트로 맞춤 
+                        bitsToImport += _helper.TurkishCharTo7Bit(chr); // 터키글자셋에서 14비트로 맞춤 (set to 14 bits in Turkish letter)
 
                     }
                     else
                     {
-                        bitsToImport += charToBits.PadLeft(14, '0');
+                        bitsToImport += charToBits.PadLeft(14, '0'); //14비트가 안되면 앞을 0으로 패딩 (If less than 14 bits, padding the leading 0)
 
                     }
                 }
