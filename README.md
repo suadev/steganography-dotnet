@@ -15,12 +15,24 @@
 ### Import
 ===============
 
-<img src="https://ur0n2.com/githu/im2.png" alt="import">
+ <img src="https://ur0n2.com/githu/im2.png" alt="import">
 
 ### Export
 ===============
 
-<img src="https://ur0n2.com/githu/exp.png" alt="import">
+ <img src="https://ur0n2.com/githu/ex.png" alt="export">
+
+
+## Example
+### Import
+ ===============
+
+ <img src="https://ur0n2.com/githu/imp.png" alt="import">
+
+### Export
+ ===============
+
+ <img src="https://ur0n2.com/githu/exp.png" alt="import">
 
 
 
@@ -30,18 +42,21 @@
 >cd steganography-dotnet
 >After then, complie in personal IDE's enviroment and excute the Steganography.exe.
 >AND USE!!
-
+>(Recommand IDE: Visual Studio 2015 Community)
 
 ## License
 Not yet.
 
-## Collaborator
+## Original Author
+* suadev
+
+## Collaborator and contactable address
 * Junhwan Lee : ur0n2@ur0n2.com
 * Hyunsik Kim : rlagustlr677@naver.com
 * Seungyeon Kang : rillyppoppy@naver.com
 
 # 스테가노그래피 - 닷넷 (steganography-dotnet)
-<img src="https://ur0n2.com/githu/gdgtse.png" alt="확인했습니다" height="350" width="350">
+ <img src="https://ur0n2.com/githu/gdgtse.png" alt="확인했습니다" height="350" width="350">
 =====================================
 ## 이 프로그램에 대하여 (About this program)
 > 이 프로그램은 C#(.net)으로 만든 스테가노 프로그램입니다. 당신은 이 프로그램을 사용해서 사진에서 픽셀의 LSB(Least Significat Bits)에 메시지를 숨길 수 있습니다. 이 프로그램은 숨길 메시지에 유니코드를 지원합니다.
@@ -85,6 +100,9 @@ Not yet.
 
 ## 라이센스(License)
 아직 적용하지 않았습니다. (Not yet.)
+
+## 원작자
+* suadev
 
 ## 협업자(Collaborator) 및 문의(Contact)
 * 이준환(JunHwan Lee): ur0n2@ur0n2.com
