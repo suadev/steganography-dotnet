@@ -10,12 +10,35 @@
 [link]: https://github.com/suadev/steganography-dotnet "ㄳㅎㅅㅇ(Thanks)"
 
 ## How to use
-> Note : If image contains transparent pixels, embed message can reveal. Because this program uses a way that hiding in LSB of pixel. 
+> Note : If image contains transparent pixels, embed message can reveal. Because this program uses a way that hiding in LSB of pixels.
 
-###Import
+### Import
 ===============
 
 <img src="https://ur0n2.com/githu/im2.png" alt="import">
+
+### Export
+===============
+
+<img src="https://ur0n2.com/githu/exp.png" alt="import">
+
+
+
+## Installation
+>```bash
+>git clone https://github.com/rlagustlr677/steganography-dotnet.git
+>cd steganography-dotnet
+>After then, complie in personal IDE's enviroment and excute the Steganography.exe.
+>AND USE!!
+
+
+## License
+Not yet.
+
+## Collaborator
+* Junhwan Lee : ur0n2@ur0n2.com
+* Hyunsik Kim : rlagustlr677@naver.com
+* Seungyeon Kang : rillyppoppy@naver.com
 
 #���װ����׷���-����(steganography-dotnet)
 <img src="https://ur0n2.com/githu/gdgtse.png" alt="Ȯ���߽��ϴ�" height="350" width="350">
