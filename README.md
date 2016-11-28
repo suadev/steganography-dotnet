@@ -9,6 +9,19 @@ Thank you for Korean letter support to [rlagustlr677][link1] , [SeungyeonKang][l
 ## 1. About this program
 > This program is a steganography program using C#(.net). Through this program, you can hide message in LSB of image file. This support UNICODE(English,Korean and Turkish, ect).
 
+
+ <table>
+   <tr> 
+     <td  colspan='2'>
+        <img width="500" src="http://1.bp.blogspot.com/_j3RPy6BIF9U/S7Ex_dPQmkI/AAAAAAAAAEA/zDWlpSp0X4I/s1600/masa4.jpg" alt="awesome" />
+     </td>
+   </tr>
+   <tr>
+      <td style="width:600px;">-Original image</td> <td> -Stego image that contains 1458 characters</td>
+   </tr>
+ </table>
+
+
 ## 2. How to use
 > Note : If image contains transparent pixels, embed message can reveal. Because this program uses a way that hiding in LSB of pixels.
 
