@@ -25,7 +25,7 @@ namespace Steganography
         {
             try
             {
-                return ExportTextLength(); //ExportTextLenth 반환
+                return ExportTextLength(); //ExportTextLenth 메시지 길이 왼쪽아래에서 가져옴
             }
             catch
             {
@@ -119,7 +119,7 @@ namespace Steganography
 
                 for (int l = 0; l < totalBytes; l++) // Getting the last bit of each bytes and stores to 'bytesToExportast' (각 바이트의 마지막 비트를 꺼내서 byteToExportLast에 저장함)
                 {
-                    bytesToExportLast += bytesToExport.Substring(pointer, 2);
+                    bytesToExportLast += bytesToExport.Substring(pointer, 2); // pointer부터 다음 2개 가져와라(2bit 숨긴곳)
                     pointer += 8;
                 }
                 int decrease = 0, k = 0, temp = 0;
@@ -127,34 +127,30 @@ namespace Steganography
 
                 for (int j = 0; j < bytesToExportLast.Length / 14; j++)  // 14 bits -> One Character, 7 비트를 하나의 문자열로 바꾸는 부분
                 {
-                    for (int i = k; i < k + 14; i++)
+                    for (int i = k; i < k + 14; i++) 
                     {
-                        temp += Convert.ToInt32(bytesToExportLast.Substring(i, 1)) * (int)Math.Pow(2, (13 - decrease)); 
+                        temp += Convert.ToInt32(bytesToExportLast.Substring(i, 1)) * (int)Math.Pow(2, (13 - decrease));  //2진수를 10진수로 바꿈
                         decrease++;
                     }
 
-                    if (temp >= 1000)
+                    if (temp >= 1000) //한글이면
                     {
                         importedText += Encoding.Unicode.GetString(BitConverter.GetBytes(temp + 43032)).TrimEnd((Char)0);
                     }
-                    else if (temp < 13)
+                    else if (temp < 13) //터키어면
                     {
                         importedText += _helper.NumberToTurkishChar(temp);
                     }
-                    else
+                    else // 영어 or 그외 
                     {
                         importedText += Encoding.Unicode.GetString(BitConverter.GetBytes(temp)).TrimEnd((Char)0);
                     }// 그 유니코드 값에 해당하는 문자열 꺼냄 (Export the string that matched the UNICODE)
 
                     _form.ExpProgressBar.Increment(1);
-                    k += 14; temp = decrease = 0;
+                    k += 14; temp = decrease = 0; // 14는 다음 글자의 바이너리 시작점 
                 }
 
-
-
-
-
-                _form.ExportTextBoxText = importedText;// 폼으로 문자열 바로 꺼냄 (Extract string directly to form)
+                _form.ExportTextBoxText = importedText;// 폼으로 문자열 바로 꺼냄 (Extract string directly to form) /실제 출력 부분 
                 SetInfoLabels();
             }
             else // 추출된 텍스트의 길이가 0이면 Stego 파일이 아니라고 판단 (if the exported text length is 0, judge it's not a stego file.)

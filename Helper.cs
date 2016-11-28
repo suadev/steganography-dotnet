@@ -75,7 +75,7 @@ namespace Steganography
             }
             return bitmap;
         }
-
+        //패딩부분
         public string TurkishCharTo7Bit(char turkishChar)
         {
             if (turkishChar == 'ş')
@@ -146,7 +146,7 @@ namespace Steganography
         /// <param name="totalPixel"></param>
         /// <param name="bar"></param>
         /// <param name="totalBytesMod3"></param>
-        /// <returns></returns>
+        /// <returns></returns> //이미지로부터 필요한 바이트 추출
         public string GetOnlyNecessaryBytesFromImage(int totalPixel, int totalBytesMod3, ProgressBar bar)
         {
             var bits = string.Empty;
