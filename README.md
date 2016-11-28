@@ -1,13 +1,13 @@
-# Steganography-Dotnet(English)
-<img src="https://ur0n2.com/githu/gdgtse.png" alt="확인했습니다" height="350" width="350">
+## Thank You!
 
-=====================================
+Thank you for Korean letter support to [rlagustlr677][link1] , [SeungyeonKang][link2] , [ur0n2][link3]
+
+[link1]: https://github.com/rlagustlr677
+[link2]: https://github.com/SeungyeonKang
+[link3]: https://github.com/ur0n2
 
 ## 1. About this program
 > This program is a steganography program using C#(.net). Through this program, you can hide message in LSB of image file. This support UNICODE(English,Korean and Turkish, ect).
-
->* Forked from [here][link]
-[link]: https://github.com/suadev/steganography-dotnet "ㄳㅎㅅㅇ(Thanks)"
 
 ## 2. How to use
 > Note : If image contains transparent pixels, embed message can reveal. Because this program uses a way that hiding in LSB of pixels.
@@ -44,17 +44,6 @@
 >After then, complie in personal IDE's enviroment and excute the Steganography.exe.
 >AND USE!!
 >(Recommand IDE: Visual Studio 2015 Community)
-
-## 5. License
-ㅎㅇㅎㅅㄴㄷ License 2016 JunHwan Lee, Hyunsik Kim, Seungyeon Kang 
-
-## 6. Original Author
-* suadev
-
-## 7. Collaborator and contactable address
-* Junhwan Lee : ur0n2@ur0n2.com
-* Hyunsik Kim : rlagustlr677@naver.com
-* Seungyeon Kang : rillyppoppy@naver.com
 
 ------------
 
