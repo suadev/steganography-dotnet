@@ -1,0 +1,19 @@
+#This is .gitignore list for Visual Studio 2015 at Ediplus 
+#Author: ur0n2
+
+*.dll
+*.exe
+*.pdb
+*.cache
+*.bak
+*.[Tt]humbs.db
+
+[Oo]bj/
+[Bb]in/
+[Dd]ebug*/
+{Rr]elease*/
+[Bb]uild/
+
+#ref: http://rapapa.net/?p=85
+#how to try
+#git rm --dry-run *.exe

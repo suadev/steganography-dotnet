@@ -75,35 +75,35 @@ namespace Steganography
             }
             return bitmap;
         }
-
+        //패딩부분
         public string TurkishCharTo7Bit(char turkishChar)
         {
             if (turkishChar == 'ş')
-                return "0000000";
+                return "00000000000000";
             if (turkishChar == 'Ş')
-                return "0000001";
+                return "00000000000001";
             if (turkishChar == 'ç')
-                return "0000010";
+                return "00000000000010";
             if (turkishChar == 'Ç')
-                return "0000011";
+                return "00000000000011";
             if (turkishChar == 'ğ')
-                return "0000100";
+                return "00000000000100";
             if (turkishChar == 'Ğ')
-                return "0000101";
+                return "00000000000101";
             if (turkishChar == 'ü')
-                return "0000110";
+                return "00000000000110";
             if (turkishChar == 'Ü')
-                return "0000111";
+                return "00000000000111";
             if (turkishChar == 'ö')
-                return "0001000";
+                return "00000000001000";
             if (turkishChar == 'Ö')
-                return "0001001";
+                return "00000000001001";
             if (turkishChar == '\n')
-                return "0001010";
+                return "00000000001010";
             if (turkishChar == 'İ')
-                return "0001011";
+                return "00000000001011";
             if (turkishChar == 'ı')
-                return "0001100";
+                return "00000000001100";
             return "?";
         }
 
@@ -138,13 +138,15 @@ namespace Steganography
             return '?';
         }
 
+       
+
         /// <summary>
         /// Gets the necessary bytes starting from top left corner of the image.
         /// </summary>
         /// <param name="totalPixel"></param>
         /// <param name="bar"></param>
         /// <param name="totalBytesMod3"></param>
-        /// <returns></returns>
+        /// <returns></returns> //이미지로부터 필요한 바이트 추출
         public string GetOnlyNecessaryBytesFromImage(int totalPixel, int totalBytesMod3, ProgressBar bar)
         {
             var bits = string.Empty;
