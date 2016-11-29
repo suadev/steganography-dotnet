@@ -1,6 +1,6 @@
 ## Thank You!
 
-Thank you for Korean letter support to [rlagustlr677][link1] , [SeungyeonKang][link2] , [ur0n2][link3]
+Thanks to  [rlagustlr677][link1] , [SeungyeonKang][link2] and [ur0n2][link3] for Korean letter support.
 
 [link1]: https://github.com/rlagustlr677
 [link2]: https://github.com/SeungyeonKang
@@ -51,12 +51,10 @@ Thank you for Korean letter support to [rlagustlr677][link1] , [SeungyeonKang][l
 
 ## 4. Installation
 >```bash
->git clone https://github.com/rlagustlr677/steganography-dotnet.git
+>git clone https://github.com/suadev/steganography-dotnet.git
 >cd steganography-dotnet
 >```
->After then, complie in personal IDE's enviroment and excute the Steganography.exe.
->AND USE!!
->(Recommand IDE: Visual Studio 2015 Community)
+>(Recommand IDE: Visual Studio)
 
 ------------
 
