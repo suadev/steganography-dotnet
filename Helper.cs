@@ -75,7 +75,7 @@ namespace Steganography
             }
             return bitmap;
         }
-        //패딩부분
+
         public string TurkishCharTo7Bit(char turkishChar)
         {
             if (turkishChar == 'ş')
@@ -138,15 +138,12 @@ namespace Steganography
             return '?';
         }
 
-       
-
         /// <summary>
         /// Gets the necessary bytes starting from top left corner of the image.
         /// </summary>
         /// <param name="totalPixel"></param>
         /// <param name="bar"></param>
         /// <param name="totalBytesMod3"></param>
-        /// <returns></returns> //이미지로부터 필요한 바이트 추출
         public string GetOnlyNecessaryBytesFromImage(int totalPixel, int totalBytesMod3, ProgressBar bar)
         {
             var bits = string.Empty;
@@ -168,8 +165,8 @@ namespace Steganography
             if (totalBytesMod3 == 0)
                 return bits;
 
-            var unusedBytesOfLastPixel = (3 - (totalBytesMod3)); // the number of unsed bytes of last pixel
-            bits = bits.Remove(8 * totalPixel * 3 - unusedBytesOfLastPixel * 8); // trimming unsed bytes of the last pixel 
+            var unusedBytesOfLastPixel = (3 - (totalBytesMod3)); // the number of unused bytes of last pixel
+            bits = bits.Remove(8 * totalPixel * 3 - unusedBytesOfLastPixel * 8); // trimming unused bytes of the last pixel 
             return bits;
         }
     }
