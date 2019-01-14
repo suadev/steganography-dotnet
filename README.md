@@ -6,6 +6,8 @@ Thanks to  [rlagustlr677][link1] , [SeungyeonKang][link2] and [ur0n2][link3] for
 [link2]: https://github.com/SeungyeonKang
 [link3]: https://github.com/ur0n2
 
+## An example output that contains 1458 characters. ##
+
  <table>
    <tr> 
      <td  colspan='2'>
@@ -13,7 +15,7 @@ Thanks to  [rlagustlr677][link1] , [SeungyeonKang][link2] and [ur0n2][link3] for
      </td>
    </tr>
    <tr>
-      <td style="width:600px;">-Original image</td> <td> -Stego image that contains 1458 characters</td>
+      <td style="width:600px;">Original image</td> <td> Stego image that contains 1458 characters</td>
    </tr>
  </table>
 
