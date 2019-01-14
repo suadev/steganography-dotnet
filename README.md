@@ -1,6 +1,6 @@
 ## Thank You!
 
-Thanks to  [rlagustlr677][link1] , [SeungyeonKang][link2] and [ur0n2][link3] for Korean letter support.
+Thanks to  [rlagustlr677][link1] , [SeungyeonKang][link2] and [ur0n2][link3] for Korean language support.
 
 [link1]: https://github.com/rlagustlr677
 [link2]: https://github.com/SeungyeonKang
