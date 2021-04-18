@@ -738,7 +738,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(165, 22);
             this.label14.TabIndex = 2;
-            this.label14.Text = "suadev@gmail.com";
+            this.label14.Text = "suadev at gmail dot com";
             // 
             // Help
             // 
